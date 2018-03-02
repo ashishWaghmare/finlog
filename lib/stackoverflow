@@ -1,0 +1,33 @@
+flutter run --debug
+Launching lib/main.dart on Android SDK built for x86 in debug mode...
+Initializing gradle...                                0.6s
+Resolving dependencies...                             0.8s
+Running 'gradlew assembleDebug'...                        
+
+Oops; flutter has exited unexpectedly.
+Crash report written to /home/sushma/Hacks/finlog/flutter_03.log;
+please let us know at https://github.com/flutter/flutter/issues.
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Script '/home/sushma/Tools/flutter/packages/flutter_tools/gradle/flutter.gradle' line: 421
+
+* What went wrong:
+Execution failed for task ':app:flutterDependenciesDebug'.
+> Process 'command '/home/sushma/Tools/flutter/bin/flutter'' finished with non-zero exit value 1
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 1s
+Gradle build failed: 1
+sushma@inspiron-7560:~/Hacks/finlog$ flutter run --stacktrace
+Could not find an option named "stacktrace".
+
+Run 'flutter -h' (or 'flutter <command> -h') for available flutter commands and options.
+
+
+sudo apt-get install lib32stdc++6
