@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
 
 class FinLogStartPage extends StatefulWidget {
   FinLogStartPage({Key key, this.title}) : super(key: key);
@@ -20,6 +22,13 @@ class FinLogStartPage extends StatefulWidget {
 
 class _MyHomePageState extends State<FinLogStartPage> {
   int _counter = 0;
+
+  Future<String> getData() async {
+    var response = await http.get(
+        Uri.encodeFull('https://jsonplaceholder.typicode.com/posts/1'),
+        headers: {"Accept": "application/json"});
+    print(response.body);
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -76,7 +85,7 @@ class _MyHomePageState extends State<FinLogStartPage> {
             // Icon Button
             new IconButton(
               icon: new Icon(
-                Icons.info,
+                Icons.chat,
                 color: Colors.blue,
               ),
               // Execute when pressed
@@ -86,7 +95,27 @@ class _MyHomePageState extends State<FinLogStartPage> {
               },
               // Setting the size of icon
               iconSize: 80.0,
-            )
+            ),
+            new IconButton(
+              icon: new Icon(
+                Icons.assessment,
+                color: Colors.red,
+              ),
+              // Execute when pressed
+              onPressed: () {
+                // use the navigator to goto a named route
+                Navigator.of(context).pushNamed('/summary');
+              },
+              iconSize: 80.0,
+            ),
+            new IconButton(
+              icon: new Icon(
+                Icons.code,
+                color: Colors.green,
+              ),
+              onPressed: getData,
+              iconSize: 80.0,
+            ),
           ],
         ),
       ),
