@@ -1,4 +1,4 @@
-package com.example.finlog;
+package in.anica.finlog;
 
 import android.os.Bundle;
 
